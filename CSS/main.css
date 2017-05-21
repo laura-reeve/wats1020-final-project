@@ -6,11 +6,7 @@
   html {
     font-size: 12px;
   }
-  #game-container {
-    border: 2px solid black;
   }
-}
-
 
 /* S */
 @media (min-width: 768px) and (max-width: 991px) {

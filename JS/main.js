@@ -6,7 +6,6 @@ $(document).ready( function() {
   $(window).on('resize orientationChange', function(event) {
     var width = $(window).width();
     var height = $(window).height();
-    $.resize(width);
     $(".miniclip-game-embed").resize(width, height);
   });
   
