@@ -1,10 +1,74 @@
-<!doctype html>
-<head>
-<meta charset="utf-8">
-<meta title="Dive Flipping Website Demo - WATS 3020 FInal Project">
+<!-- The basic requirements necessary to fulfill the goals of this assignment are:
 
-</head>
-<body>
-  Hello world!
-</body>
+Create a mobile-friendly header that can serve as a prototype for your final project.
+Create a mobile-friendly layout for the various sections of the page.
+Create a mobile-friendly footer to display relevant information.
+Use media queries, Bootstrap components, and jQuery to modify the layout and display of the page for at least four screen sizes: 
+mobile (phone), tablet, desktop and television.
+The resolution breakpoints we will use for these four sizes are the default Bootstrap breakpoints:
+
+Extra Small (xs): less than 768px wide (phones)
+Small (sm): 768px to 991px wide (tablets)
+Medium (md): 992px to 1199px wide (desktops)
+Large (lg): 1200px or more wide (televisions, large desktops, etc.) -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flip Diving Demo - WATS 3020 Final Project</title>
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="CSS/main.css">
+  </head>
+  <body>
+    <header><!-- 6 col container all sizes - website name & logo; search bar and button -->
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6">
+            <h1>
+              Flip Diving
+            </h1>
+            <p>
+              This is a Flash Game - you may need to downoad or allow Flash.
+            </p>
+          </div>
+          <div class="col-xs-6" id="search-button">
+            <form class="form-inline">
+              <label class="sr-only" for="inlineFormInput">Search</label>
+              <input type="text" class="form-control" placeholder="Search">
+              <span class="btn btn-success">Search</span>
+            </form>
+          </div> 
+        </div> <!--row--> 
+      </div> <!--container-->
+    </header>
+    
+    <!-- Flip Diving Game -->
+    <div class="container" id="game-container">
+      <!-- Place this code where you'd like the game to appear - center this and make appear for all sizes -->
+      <div class="miniclip-game-embed" data-game-name="flip-diving" data-theme="0" data-width="488" data-height="670" data-language="en"><a href="http://www.miniclip.com/games/flip-diving/">Play Flip Diving</a></div>
+      <p style="text-align:center;"><a href="http://www.miniclip.com/games/flip-diving/" target="_blank">Play Flip Diving</a> / More <a href="http://www.miniclip.com/games/genre-1194/" target="_blank">iPhone games</a></p>
+    </div>
+    
+    <!-- Review and Home buttons -->
+    <div class="container">
+      <span class="btn btn-warning">Review</span>
+      <span class="btn btn-primary">Return Home</span>
+    </div>
+    
+    <!-- Company Logo or Ad Space -->
+    <footer>
+      <div class="container">
+        <h4>
+          Free Silly Games.com and logo
+        </h4>
+      </div>
+    </footer>
+    <script src="//static.miniclipcdn.com/js/game-embed.js"></script>
+    <script src="JS/jquery-3.2.1.js"></script>
+    <script src="JS/bootstrap.min.js"></script>
+    <script src="JS/main.js"></script>
+  </body>
 </html>

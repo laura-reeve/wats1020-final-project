@@ -1,0 +1,42 @@
+/* My original styles will go here */
+
+/* Mobile first */
+/* XS */
+@media (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+  #game-container {
+    height: auto;
+    width: auto;
+  }
+}
+
+
+/* S */
+@media (min-width: 768px) and (max-width: 991px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+/* M */
+@media (min-width: 992px) and (max-width: 1199px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* L */
+@media (min-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/* Global Styles */
+
+#search-button {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
