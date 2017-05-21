@@ -21,16 +21,18 @@ Large (lg): 1200px or more wide (televisions, large desktops, etc.) -->
     <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="CSS/bootstrap-theme.min.css">
     <link rel="stylesheet" type="text/css" href="CSS/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Kumar+One" rel="stylesheet">
   </head>
   <body>
-    <header><!-- 6 col container all sizes - website name & logo; search bar and button -->
+    <header><!-- Company Name, Search bar and button -->
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
+            <img src="Designs/game-icon.jpg" height="60px" width="60px" id="game-logo">
             <h1>
-              Flip Diving
+              FreeSillyGames.com
             </h1>
-            <p>
+            <p id="flash-warning">
               This is a Flash Game - you may need to downoad or allow Flash.
             </p>
           </div>
@@ -45,26 +47,72 @@ Large (lg): 1200px or more wide (televisions, large desktops, etc.) -->
       </div> <!--container-->
     </header>
     
-    <!-- Flip Diving Game -->
-    <div class="container" id="game-container">
-      <!-- Place this code where you'd like the game to appear - center this and make appear for all sizes -->
-      <div class="miniclip-game-embed" data-game-name="flip-diving" data-theme="0" data-width="100%" data-height="710" data-language="en"><a href="http://www.miniclip.com/games/flip-diving/">Play Flip Diving</a></div>
-      <p style="text-align:center;"><a href="http://www.miniclip.com/games/flip-diving/" target="_blank">Play Flip Diving</a> / More <a href="http://www.miniclip.com/games/genre-1194/" target="_blank">iPhone games</a></p>
-    </div>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsemenu" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>   
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Flip Diving</a>
+        </div>
+          <div class="collapse navbar-collapse" id="collapsemenu">
+            <ul class="nav navbar-nav">
+            <li><a href="#">Sports</a></li>
+            <li><a href="#">Strategy</a></li>
+            <li><a href="#">Driving</a></li>
+            <li><a href="#">Puzzles</a></li>
+            <li><a href="#">Word Games</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     
-    <!-- Review and Home buttons -->
+    <!-- Review (Modal will go here on click) and Home buttons -->
     <div class="container text-center" id="review-return-btn">
       <span class="btn btn-warning">Review</span>
       <span class="btn btn-primary">Return Home</span>
     </div>
     
-    <!-- Company Logo or Ad Space -->
+    <!-- Ad space in all but mobile sizes - moved to footer for mobile size -->
+    <div class="container text-center" id="ad-space">
+      <p>
+        Ad space goes here.
+      </p>
+    </div>
+    
+    <!-- Flip Diving Game -->
+    <div class="container" id="game-container">
+      <!-- Center this and make appear for all sizes -->
+      <div class="miniclip-game-embed" data-game-name="flip-diving" data-theme="0" data-width="100%" data-height="710" data-language="en"><a href="http://www.miniclip.com/games/flip-diving/">Play Flip Diving</a></div>
+      <p style="text-align:center;"><a href="http://www.miniclip.com/games/flip-diving/" target="_blank">Play Flip Diving</a> / More <a href="http://www.miniclip.com/games/genre-1194/" target="_blank">iPhone games</a></p>
+    </div>
+    
+    <!-- Company Info Footer / Ad Space on Mobile -->
     <footer>
       <div class="container text-center">
         <h4>
-          Free Silly Games.com and logo
+          FreeSillyGames.com
         </h4>
-      </div>
+        <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <p>Location: <br>
+                123 Main Street <br>
+                Anytown, ST  USA <br>
+                </p>  
+              </div>
+              <div class="col-sm-6">
+                Email: <a href="mailto:info@freesillygames.com">info@freesillygames.com</a> <br>
+                Phone: (206) 555-5555 <br>
+                Created By: Laura Reeve 2017 (SU Web Dev Program) <br>
+              </div>
+          </div>
+        </div> <!-- paragraphs container -->
+      </div> <!-- foot container -->
     </footer>
     <script src="//static.miniclipcdn.com/js/game-embed.js"></script>
     <script src="JS/jquery-3.2.1.js"></script>

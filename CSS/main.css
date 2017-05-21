@@ -1,37 +1,85 @@
 /* My original styles will go here */
 
-/* Mobile first */
-/* XS */
-@media (max-width: 767px) {
-  html {
-    font-size: 12px;
-  }
-  }
-
-/* S */
-@media (min-width: 768px) and (max-width: 991px) {
-  html {
-    font-size: 13px;
-  }
-}
-
-/* M */
-@media (min-width: 992px) and (max-width: 1199px) {
-  html {
-    font-size: 14px;
-  }
-}
-
-/* L */
-@media (min-width: 1200px) {
-  html {
-    font-size: 16px;
-  }
-}
-
 /* Global Styles */
+
+#game-logo {
+  float: left;
+  margin-right: 5px;
+}
+
+h1 {
+  font-family: 'Kumar One', cursive, sans-serif;
+}
 
 #search-button {
   margin-top: 25px;
   margin-bottom: 10px;
 }
+
+#review-return-btn {
+  margin-bottom: 20px;
+}
+
+#ad-space {
+  border: 2px solid gray;
+  padding-top: 10px;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: black;
+  color: white;
+}
+
+/* Mobile first */
+/* XS */
+@media (max-width: 767px) {
+  img {
+    height: 30px;
+    width: 30px;
+    margin-top: -10px;
+  }
+  h1 {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  /* Change margins for mobile size */
+  #search-button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+  #review-return-btn {
+    margin-bottom: 5px; 
+    margin-top: -15px;
+  }
+}
+/* S */
+@media (min-width: 768px) and (max-width: 991px) {
+  img {
+    height: 40px;
+    width: 40px;
+    margin-top: 10px;
+  }
+  h1 {
+    font-size: 1.4em;
+  }
+}
+
+/* M */
+@media (min-width: 992px) and (max-width: 1199px) {
+  img {
+    height: 50px;
+    width: 50px;
+  }
+  h1 {
+    font-size: 1.6em;
+  }
+}
+
+/* L */
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 2em;
+  }
+}
+
