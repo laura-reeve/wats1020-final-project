@@ -1,17 +1,3 @@
-<!-- The basic requirements necessary to fulfill the goals of this assignment are:
-
-Create a mobile-friendly header that can serve as a prototype for your final project.
-Create a mobile-friendly layout for the various sections of the page.
-Create a mobile-friendly footer to display relevant information.
-Use media queries, Bootstrap components, and jQuery to modify the layout and display of the page for at least four screen sizes: 
-mobile (phone), tablet, desktop and television.
-The resolution breakpoints we will use for these four sizes are the default Bootstrap breakpoints:
-
-Extra Small (xs): less than 768px wide (phones)
-Small (sm): 768px to 991px wide (tablets)
-Medium (md): 992px to 1199px wide (desktops)
-Large (lg): 1200px or more wide (televisions, large desktops, etc.) -->
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -20,6 +6,7 @@ Large (lg): 1200px or more wide (televisions, large desktops, etc.) -->
     <title>Flip Diving Demo - WATS 3020 Final Project</title>
     <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="CSS/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" media="all" href="CSS/star-rating.min.css">
     <link rel="stylesheet" type="text/css" href="CSS/main.css">
     <link href="https://fonts.googleapis.com/css?family=Kumar+One" rel="stylesheet">
   </head>
@@ -36,13 +23,20 @@ Large (lg): 1200px or more wide (televisions, large desktops, etc.) -->
               This is a Flash Game - you may need to downoad or allow Flash.
             </p>
           </div>
-          <div class="col-sm-6" id="search-button">
+          <div class="col-sm-3" id="search-button">
             <form class="form-inline">
               <label class="sr-only" for="inlineFormInput">Search</label>
               <input type="text" class="form-control" placeholder="Search">
-              <span class="btn btn-success">Search</span>
+              <span class="btn btn-success">Search</span>        
             </form>
           </div> 
+          <div class="col-sm-3" id="social-media">
+            <!-- social media share icons -->
+            <a href="https://www.facebook.com" target="_blank"><img src="Designs/facebook favicon.svg" width="55px" height="55px"></a>
+            <a href="https://www.twitter.com" target="_blank"><img src="Designs/twitter favicon.svg" width="55px" height="55px"></a>
+            <a href="https://www.pinterest.com" target="_blank"><img src="Designs/pinterest favicon.svg" width="55px" height="55px"></a>
+            <a href="https://www.instagram.com" target="_blank"><img src="Designs/instagram-favicon-new.png" width="55px" height="55px"></a>
+          </div>
         </div> <!--row--> 
       </div> <!--container-->
     </header>
@@ -61,6 +55,12 @@ Large (lg): 1200px or more wide (televisions, large desktops, etc.) -->
         </div>
           <div class="collapse navbar-collapse" id="collapsemenu">
             <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Favorites <span class="caret"></span></a>
+              <ul class="dropdown-menu" id="favorites-menu">
+                <li id="replace-li"><a href="#">Nothing yet!</a></li>
+              </ul>
+            </li>
             <li><a href="#">Sports</a></li>
             <li><a href="#">Strategy</a></li>
             <li><a href="#">Driving</a></li>
@@ -71,11 +71,51 @@ Large (lg): 1200px or more wide (televisions, large desktops, etc.) -->
       </div>
     </nav>
     
-    <!-- Review (Modal will go here on click) and Home buttons -->
+    <!-- Review and modal button -->
     <div class="container text-center" id="review-return-btn">
-      <span class="btn btn-warning">Review</span>
-      <span class="btn btn-primary">Return Home</span>
-    </div>
+      <button type="button" class="btn btn-warning" id="review-btn">Review</button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="review-modal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Review Flip Diving</h4>
+          </div>
+          <div class="modal-body">
+            <form id="review-form">
+              <div class="form-group">
+                <label for="inputUserName">User Name:</label>
+                <input class="form-control" type="text" id="inputUserName" placeholder="User Name">
+              </div>
+              <div class="form-group">
+                <label for="inputPassword">Password:</label>
+                <input class="form-control" type="text" id="inputPassword" placeholder="Password">
+              </div>
+              <p>Haven't created an account yet?  <a href="#">Click here!</a></p>
+              </div>
+            
+              <!-- Star Rating - not sure why the glyphicons aren't working - might switch this to a bar graph? -->
+                <input id="input-id" name="input-name" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="sm" data-rtl="false">
+              
+              <div class="form-group">
+                <label for="comments">Comments:</label>
+                <textarea class="form-control" type="text" rows="5" id="comments" placeholder="Comments"></textarea>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+              </div>
+            </form>
+          </div> <!-- modal-content -->
+        </div> <!-- modal-dialog -->
+      </div> <!-- modal -->
+      <button type="button" class="btn btn-danger" id="favorites-btn">Add to Favorites</button>
+      <button type="button" class="btn btn-primary" id="return-btn">Return Home</button>
+    </div> <!-- container -->
+    
     
     <!-- Ad space in all but mobile sizes - moved to footer for mobile size -->
     <div class="container text-center" id="ad-space">
@@ -118,6 +158,7 @@ Large (lg): 1200px or more wide (televisions, large desktops, etc.) -->
     <script src="JS/jquery-3.2.1.js"></script>
     <script src="JS/bootstrap.min.js"></script>
     <script src="modernizr-cutsom.js"></script>
+    <script src="JS/star-rating.min.js"></script>
     <script src="JS/main.js"></script>
   </body>
 </html>
