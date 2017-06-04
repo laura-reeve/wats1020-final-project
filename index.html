@@ -6,7 +6,6 @@
     <title>Flip Diving Demo - WATS 3020 Final Project</title>
     <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="CSS/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" media="all" href="CSS/star-rating.min.css">
     <link rel="stylesheet" type="text/css" href="CSS/main.css">
     <link href="https://fonts.googleapis.com/css?family=Kumar+One" rel="stylesheet">
   </head>
@@ -15,10 +14,8 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
-            <img src="Designs/game-icon.jpg" height="60px" width="60px" id="game-logo">
-            <h1>
-              FreeSillyGames.com
-            </h1>
+            <a href="#"><img src="Designs/game-icon.jpg" height="60px" width="60px" id="game-logo">
+            <h1>FreeSillyGames.com</h1></a>
             <p id="flash-warning">
               This is a Flash Game - you may need to downoad or allow Flash.
             </p>
@@ -75,8 +72,8 @@
     <div class="container text-center" id="review-return-btn">
       <button type="button" class="btn btn-warning" id="review-btn">Review</button>
 
-      <!-- Modal -->
-      <div class="modal fade" id="review-modal" role="dialog">
+      <!-- Modal --> 
+       <div class="modal fade" id="review-modal" role="dialog">
         <div class="modal-dialog">
 
           <!-- Modal content-->
@@ -86,27 +83,33 @@
             <h4 class="modal-title">Review Flip Diving</h4>
           </div>
           <div class="modal-body">
-            <form id="review-form">
+            <form id="review-form" method="post">
               <div class="form-group">
                 <label for="inputUserName">User Name:</label>
-                <input class="form-control" type="text" id="inputUserName" placeholder="User Name">
+                  <input class="form-control required" type="text" id="inputUserName" placeholder="User Name">
               </div>
-              <div class="form-group">
+              <div class="form-group row">
                 <label for="inputPassword">Password:</label>
-                <input class="form-control" type="text" id="inputPassword" placeholder="Password">
+                <input class="form-control required" type="password" id="inputPassword" placeholder="Password">
               </div>
               <p>Haven't created an account yet?  <a href="#">Click here!</a></p>
               </div>
             
-              <!-- Star Rating - not sure why the glyphicons aren't working - might switch this to a bar graph? -->
-                <input id="input-id" name="input-name" class="rating rating-loading" data-min="0" data-max="5" data-step="1" data-size="sm" data-rtl="false">
-              
+             <button class="btn btn-success" id="like">I love it!
+               <span class="count-like">0</span>
+             </button>
+              &nbsp;
+             <button class="btn btn-danger" id="dislike">
+               <span class="count-dislike">0</span> I hate it!
+             </button>
+            
               <div class="form-group">
                 <label for="comments">Comments:</label>
-                <textarea class="form-control" type="text" rows="5" id="comments" placeholder="Comments"></textarea>
+                <textarea class="form-control" type="text" rows="3" id="comments" placeholder="Comments"></textarea>
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Submit</button>
+                <button type="submit" class="btn btn-default">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
               </div>
             </form>
           </div> <!-- modal-content -->
@@ -122,6 +125,11 @@
       <p>
         Ad space goes here.
       </p>
+    </div>
+    
+    <!-- Game hides on load, PLay Game button activates game -->
+    <div class="container text-center" id="game-button-container">
+    <button class="btn btn-success" id="game-button">Click to Play Game</button>  
     </div>
     
     <!-- Flip Diving Game -->
@@ -157,8 +165,6 @@
     <script src="//static.miniclipcdn.com/js/game-embed.js"></script>
     <script src="JS/jquery-3.2.1.js"></script>
     <script src="JS/bootstrap.min.js"></script>
-    <script src="modernizr-cutsom.js"></script>
-    <script src="JS/star-rating.min.js"></script>
     <script src="JS/main.js"></script>
   </body>
 </html>

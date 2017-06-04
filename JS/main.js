@@ -1,34 +1,43 @@
 // My original JS styles will go here.
 
-$(document).ready( function() {
+// Hide game load on load
+$("#game-container").hide();
+
+$(document).ready(function() {
+  
+  var voteCounts = {
+    like: 0,
+    dislike: 0,
+    total: 0
+  }
+  
+  // On click Play Game button, game runs
+  $("#game-button").click(function(){
+    $("#game-container").show();
+  });
   
   // Modal button - opens Review button modal
   $("#review-btn").click(function(){
     $("#review-modal").modal();
   });
   
-  // I want to validate the form for required username and password - I saw something about using "excluded"?
-/*  $("#review-form").validate({
-    submitHandler: function(form) {
-      showErrors();
-      form.submit();
-    },
-    rules: {
-      "inputUserName": {
-        required: true   
-      },
-      "inputPassword": {
-        required: true
-      }
-    }
-  }); 
+  // Logging # of Likes
+  $("#like").click(function(){
+    voteCounts.like += 1;
+    voteCounts.total += 1;
+  $(".count-like").html(voteCounts.like);
+    console.log(voteCounts);
+  });
   
-  I would also like to record the votes for the Star Rating using localStorage and get an average rating that will populate on load.
-  
-  */
-  
+  // Logging # of Dislikes
+  $("#dislike").click(function() {
+    voteCounts.dislike += 1;
+    voteCounts.total += 1;
+  $(".count-dislike").html(voteCounts.dislike);
+    console.log(voteCounts);
+  });
+
   // Favorites button - alerts user of click and adds page to Favorites dropdown in nav menu
-  // I want to see if I can populate the URL and text using jQuery...?
   $("#favorites-btn").click(function() {
     alert("Added to Favorites!");
     $("#replace-li").html("<a href='#'>Flip Diving</a>");

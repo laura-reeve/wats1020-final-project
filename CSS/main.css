@@ -9,6 +9,8 @@
 
 h1 {
   font-family: 'Kumar One', cursive, sans-serif;
+  color: black;
+  underline: none;
 }
 
 #search-button {
@@ -29,6 +31,14 @@ h1 {
   border: 2px solid gray;
   padding-top: 20px;
   padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin: 20px;
+}
+
+#game-button {
   margin-bottom: 20px;
 }
 
@@ -63,6 +73,9 @@ footer {
   #review-return-btn {
     margin-bottom: 5px; 
     margin-top: -15px;
+  }
+  #game-button {
+    margin-bottom: 0;
   }
 }
 /* S */
