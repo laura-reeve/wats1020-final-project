@@ -3,15 +3,17 @@
 // Hide game load on load
 $("#game-container").hide();
 
+// Ready
 $(document).ready(function() {
   
+  // For logging Like/Dislike counts
   var voteCounts = {
     like: 0,
     dislike: 0,
     total: 0
   }
   
-  // On click Play Game button, game runs
+  // On "Click to Play Game" button, downnload and run game
   $("#game-button").click(function(){
     $("#game-container").show();
   });
@@ -36,6 +38,9 @@ $(document).ready(function() {
   $(".count-dislike").html(voteCounts.dislike);
     console.log(voteCounts);
   });
+  
+  // Validate Review modal on Submit click (Username and Password required)
+  $("review-form").validate();
 
   // Favorites button - alerts user of click and adds page to Favorites dropdown in nav menu
   $("#favorites-btn").click(function() {
